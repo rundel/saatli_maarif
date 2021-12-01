@@ -16,7 +16,7 @@ try:
     epd = epd7in5b_HD.EPD()
 
     epd.init()
-    #epd.Clear()
+    epd.Clear()
 
     image = Image.open('saatli-maarif.bmp')
     epd.display_black(epd.getbuffer(image))
