@@ -13,8 +13,8 @@ library(grid)
 
 # add fonts --------------------------------------------------------------------
 
-font_add(family = "HelveticaCompressed", regular = "/Users/mine/Library/Fonts/HelveticaComp.ttf")
-font_add(family = "HelveticaNeue85Heavy", regular = "/Users/mine/Library/Fonts/Helvetica-Neue-LT-Std-85-Heavy_22545.ttf")
+font_add(family = "HelveticaCompressed", regular = "fonts/HelveticaComp.ttf")
+font_add(family = "HelveticaNeue85Heavy", regular = "fonts/Helvetica-Neue-LT-Std-85-Heavy_22545.ttf")
 
 # load data --------------------------------------------------------------------
 
@@ -210,11 +210,9 @@ round_bg <- grid::roundrectGrob(
   just = bg$just, name = bg$name, gp = bg$gp, vp = bg$vp
 )
 g$grobs[[1]] <- round_bg
-plot(g)
-
 
 #FONT: TEKO MEDIUM 500 - https://fonts.google.com/specimen/Teko?category=Sans+Serif,Display&thickness=5&width=2&preview.text=PERSEMBE%206%20SUBAT&preview.text_type=custom
 
-ggsave(device = "bmp", filename = "saatli-maarif.bmp",
+ggsave(plot = plot(g), device = "bmp", filename = "saatli-maarif.bmp",
        height = 8.8, width = 5.28, dpi = 100,
        antialias = "none")
