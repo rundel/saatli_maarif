@@ -117,9 +117,9 @@ draw_clock <- function(tzone = "America/New_York", city = "Durham"){
   }
 
   ggplot() +
-    geom_point(data = minutes, aes(x = x, y = y), size = 0.8) +
+    geom_point(data = minutes, aes(x = x, y = y), size = 1) +
     geom_point(data = hours, aes(x = x, y = y),
-               size = 2, show.legend = FALSE) +
+               size = 3, show.legend = FALSE) +
     geom_point(aes(x = 0, y = 0), size = 3) +
     coord_polar() +
     expand_limits(y = c(0, 1)) +
@@ -213,6 +213,6 @@ g$grobs[[1]] <- round_bg
 
 #FONT: TEKO MEDIUM 500 - https://fonts.google.com/specimen/Teko?category=Sans+Serif,Display&thickness=5&width=2&preview.text=PERSEMBE%206%20SUBAT&preview.text_type=custom
 
-ggsave(plot = plot(g), device = "bmp", filename = "saatli-maarif.bmp",
+ggsave(plot = g, device = "bmp", filename = "saatli-maarif.bmp",
        height = 8.8, width = 5.28, dpi = 100,
        antialias = "none")
